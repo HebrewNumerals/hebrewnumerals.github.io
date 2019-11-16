@@ -88,7 +88,7 @@
 		/* If Width Smaller than 480px */
 		@media only screen and (max-width: 480px) {
 			#container {
-				padding-top: 100px;
+				padding-top: 5em;
 			}
 		}
 		
@@ -245,6 +245,7 @@
 			margin: 0;
 			padding: 0.3em 0.5em 0.4em 0.4em;
 			word-break:break-all;
+			font-family: 'Times New Roman', serif;
 			line-height: 0.95;
 			vertical-align: text-top;
 			text-align: right;
@@ -290,8 +291,8 @@
 	<div id="main">
 		<img src="images/logo.png" id="logo">
 		<div id="title">Hebrew Numerals Converter</div>
-		<textarea id="tbxArabic" oninput="Generate(document.getElementById('tbxArabic').value)"></textarea><!--
-		--><div id="tbxHebrew"></div>
+		<textarea id="tbxArabic" oninput="Generate(document.getElementById('tbxArabic').value)" placeholder="#"></textarea><!--
+		--><textarea id="tbxHebrew" readonly placeholder="א"></textarea>
 		<div id="download"><a href="https://github.com/MattMcManis/Aleph/releases" target="_blank">Download at GitHub</a></div>
 	</div>
 </div>
