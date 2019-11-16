@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<!-- 
+    Aleph - Hebrew Numerals Converter
+    Copyright (C) 2019 Matt McManis
+    http://github.com/MattMcManis/Aleph
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program. If not, see<http://www.gnu.org/licenses/>. 
+ -->
+<html>
+<head>
+	<meta charset="utf-8">
+	<!-- Google Analytics -->
+	<script>
+	</script>
+	
+	<!-- Metadata -->
+    <title>Aleph ~ Hebrew Numerals Converter</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <meta property="og:site_name" content="Aleph ~ Hebrew Numerals Converter" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="https://glowmpv.github.io/web" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Convert Arabic Numerals into Hebrew Numerals" />
+
+    <!-- Icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/logo.png">
+	
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet"> 
+	<style>
+		html, body {
+			box-sizing: border-box;
+			height: 100%;
+			margin: 0; 
+			padding: 0;
+			font-size: 16px;
+			line-height: 1;
+			background: white;
+		}
+		
+		a {
+			color: black;
+			-o-transition:.2s;
+			-ms-transition:.2s;
+			-moz-transition:.2s;
+			-webkit-transition:.2s;
+			transition:.2s;
+			text-decoration: none;
+		}
+		
+		a:visited {
+			color: black;
+		}
+
+		a:hover {
+			color: #d4af37;
+		}
+
+		a:active {
+			color: blue;
+		}
+		
+		#container {
+			box-sizing: border-box;
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			padding: 1.5em;
+		}
+		
+		#main {
+			box-sizing: border-box;
+			position: relative;
+			padding: 0;
+			width: 1000px;
+			text-align: center;
+		}		
+		/* If Height Larger than 721px */
+		@media only screen and (min-height: 720px) {
+			#main {
+				margin: -1em 0 4em 0;
+			}
+		}
+		/* If Height Larger than 900px */
+		@media only screen and (min-height: 900px) {
+			#main {
+				margin: -1em 0 4em 0;
+			}
+		}
+		/* If Height Smaller than 720px */
+		@media only screen and (max-height: 720px) {
+			#main {
+				margin: 0;
+			}
+		}
+		/* If Width Larger than 481px */
+		@media only screen and (min-width: 480px) {
+			#main {
+				
+			}
+		}
+		/* If Width Smaller than 480px */
+		@media only screen and (max-width: 480px) {
+			#main {
+				margin: 0;
+			}
+		}
+		
+		#logo {
+
+		}
+		/* If Width Larger than 481px */
+		@media only screen and (min-width: 480px) {
+			#logo {
+				width: 90px;
+			}
+		}
+		/* If Width Smaller than 480px */
+		@media only screen and (max-width: 480px) {
+			#logo {
+				width: 70px;
+			}
+		}	
+			
+		#title {
+			box-sizing: border-box;
+			display: inline-block;
+			position: relative;
+			width: 100%;
+			padding: 0.3em 1em 1.5em 1em;
+			font-family: 'Lora', serif;
+			text-align: center;
+			font-size: 1.6em; 
+			line-height: 1.2;
+		}
+		
+		#download {
+			box-sizing: border-box;
+			display: inline-block;
+			position: relative;
+			width: 100%;
+			padding: 2em 1em 1em 1em;
+			font-family: 'Lora', serif;
+			text-align: center;
+			font-size: 1.3em; 
+			line-height: 1.2;
+		}
+		
+		#tbxHebrew {
+			box-sizing: border-box;
+			position: relative;
+			overflow: auto;
+			width: 50%; 
+			margin: 0;
+			padding: 0.3em 0.5em 0.4em 0.4em;
+			word-break:break-all;
+			line-height: 0.95;
+			vertical-align: text-top;
+			text-align: right;
+			background: white;
+		}
+		/* If Width Larger than 481px */
+		@media only screen and (min-width: 480px) {
+			#tbxHebrew {
+				/* display: inline-block; */
+				float: left;
+				width: 50%;
+				height: 400px;
+				border-top: 1px solid black;
+				border-right: 1px solid black;
+				border-bottom: 1px solid black;
+				border-left: 1px solid black;
+				font-size: 4em; 
+			}
+		}
+		/* If Width Smaller than 480px */
+		@media only screen and (max-width: 480px) {
+			#tbxHebrew {
+				display: block;
+				width: 100%;
+				height: 200px;
+				border-top: 0;
+				border-right: 1px solid black;
+				border-bottom: 1px solid black;
+				border-left: 1px solid black;
+				font-size: 3.2em; 
+			}
+		}
+		
+		#tbxArabic {
+			box-sizing: border-box;
+			resize: none;
+			position: relative;
+			overflow: auto;
+			margin: 0;
+			padding: 0.4em 0.4em 0.4em 0.5em;
+			word-break:break-all;
+			font-family: 'Noto Sans KR', sans-serif;
+			line-height: 1.2;
+			vertical-align: text-top;
+			background: white;
+		}
+		/* If Width Larger than 481px */
+		@media only screen and (min-width: 480px) {
+			#tbxArabic {
+				/* display: inline-block; */
+				float: right;
+				width: 50%;
+				height: 400px;
+				border-top: 1px solid black;
+				border-right: 1px solid black;
+				border-bottom: 1px solid black;
+				border-left: 0;
+				font-size: 3.1em; 
+			}
+		}
+		/* If Width Smaller than 480px */
+		@media only screen and (max-width: 480px) {
+			#tbxArabic {
+				display: block;
+				width: 100%;
+				height: 200px;
+				border-top: 1px solid black;
+				border-right: 1px solid black;
+				border-bottom: 1px solid black;
+				border-left: 1px solid black;
+				font-size: 2.3em; 
+			}
+		}
+		
+	</style>
+</head>
+<body>
+<div id="container">
+	<div id="main">
+		<img src="images/logo.png" id="logo">
+		<div id="title">Hebrew Numerals Converter</div>
+		<textarea id="tbxArabic" oninput="Generate(document.getElementById('tbxArabic').value)"></textarea><!--
+		--><div id="tbxHebrew"></div>
+		<div id="download"><a href="https://github.com/MattMcManis/Aleph/releases" target="_blank">Download at GitHub</a></div>
+	</div>
+</div>
+
+<script>
+function Generate(n) {
+
+	var result = "";
+	
+	// Allow numbers only
+	n = n.replace(/[^0-9]/g, '');
+	
+	// Split number into an array of digits
+	var digits = (""+n).split("").reverse();
+	
+	// Hebrew Multiplier
+	var multiplier = 0;
+
+	// Hebrew Numerals
+	var numerals = [
+		//0   1    2    3    4    5    6    7    8    9
+		["", "א", "ב", "ג", "ד", "ה", "ו", "ז", "ח", "ט" ],       // x1
+		["", "י", "כ", "ל", "מ", "נ", "ס", "ע", "פ", "צ" ],       // x10
+		["", "ק", "ר", "ש", "ת", "תק", "תר", "תש", "תת", "תתק" ], // x100
+		["׳", "׳", "׳", "׳", "׳", "׳", "׳", "׳", "׳", "׳" ]       // x1000
+	];	
+	
+	// Loop through number array, reading each digit
+	for (i = 0; i < digits.length; i++) {
+		//result = result + numerals[multiplier][digits[i]])
+		result = numerals[multiplier][digits[i]] + result;
+
+		if (multiplier == 3)
+		{
+			// Reset the multiplier
+			multiplier = 0;
+
+			// Run the Convert again
+			result = numerals[multiplier][digits[i]] + result;
+			
+			//document.getElementById("tbxHebrew").innerHTML = "error";  
+		}
+				
+		multiplier++;
+	} 
+	
+	// 15 Filter
+	var result = result.replace("יה", "טו");
+	// 16 Filter
+	var result = result.replace("יו", "טז");
+	
+	// Insert quote " before last character
+	if (result.length > 1 &&  // Hebrew digit count must be greater than 1
+		!result.endsWith("׳")  // Hebrew result must not end with Geresh ׳ for thousand 000
+		)
+	{
+		var len = result.length;
+		result = result.substring(0, len-1) + "&quot;" + result.substring(len-1);
+	}
+
+	// Display
+	document.getElementById("tbxHebrew").innerHTML = result;  
+}
+</script>
+
+</body>
+</html>
