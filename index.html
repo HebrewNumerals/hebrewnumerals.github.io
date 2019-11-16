@@ -93,14 +93,14 @@
 			width: 1000px;
 			text-align: center;
 		}		
-		/* If Height Larger than 721px */
-		@media only screen and (min-height: 720px) {
+		/* If Height Larger than 720px */
+		@media only screen and (min-height: 721px) {
 			#main {
 				margin: -1em 0 4em 0;
 			}
 		}
 		/* If Height Larger than 900px */
-		@media only screen and (min-height: 900px) {
+		@media only screen and (min-height: 901px) {
 			#main {
 				margin: -1em 0 4em 0;
 			}
@@ -112,10 +112,8 @@
 			}
 		}
 		/* If Width Larger than 481px */
-		@media only screen and (min-width: 480px) {
-			#main {
-				
-			}
+		@media only screen and (min-width: 481px) {
+
 		}
 		/* If Width Smaller than 480px */
 		@media only screen and (max-width: 480px) {
@@ -127,8 +125,8 @@
 		#logo {
 
 		}
-		/* If Width Larger than 481px */
-		@media only screen and (min-width: 480px) {
+		/* If Width Larger than 480px */
+		@media only screen and (min-width: 481px) {
 			#logo {
 				width: 90px;
 			}
@@ -145,11 +143,22 @@
 			display: inline-block;
 			position: relative;
 			width: 100%;
-			padding: 0.3em 1em 1.5em 1em;
 			font-family: 'Lora', serif;
 			text-align: center;
 			font-size: 1.6em; 
 			line-height: 1.2;
+		}
+		/* If Height Larger than 668px */
+		@media only screen and (min-height: 669px) {
+			#title {
+				padding: 0.3em 1em 1.5em 1em;
+			}
+		}
+		/* If Height Smaller than 667px */
+		@media only screen and (max-height: 667px) {
+			#title {
+				padding: 0.3em 1em 1em 1em;
+			}
 		}
 		
 		#download {
@@ -157,51 +166,21 @@
 			display: inline-block;
 			position: relative;
 			width: 100%;
-			padding: 2em 1em 1em 1em;
 			font-family: 'Lora', serif;
 			text-align: center;
 			font-size: 1.3em; 
 			line-height: 1.2;
 		}
-		
-		#tbxHebrew {
-			box-sizing: border-box;
-			position: relative;
-			overflow: auto;
-			width: 50%; 
-			margin: 0;
-			padding: 0.3em 0.5em 0.4em 0.4em;
-			word-break:break-all;
-			line-height: 0.95;
-			vertical-align: text-top;
-			text-align: right;
-			background: white;
-		}
-		/* If Width Larger than 481px */
-		@media only screen and (min-width: 480px) {
-			#tbxHebrew {
-				/* display: inline-block; */
-				float: left;
-				width: 50%;
-				height: 400px;
-				border-top: 1px solid black;
-				border-right: 1px solid black;
-				border-bottom: 1px solid black;
-				border-left: 1px solid black;
-				font-size: 4em; 
+		/* If Height Larger than 668px */
+		@media only screen and (min-height: 669px) {
+			#download {
+				padding: 2em 1em 1em 1em;
 			}
 		}
-		/* If Width Smaller than 480px */
-		@media only screen and (max-width: 480px) {
-			#tbxHebrew {
-				display: block;
-				width: 100%;
-				height: 200px;
-				border-top: 0;
-				border-right: 1px solid black;
-				border-bottom: 1px solid black;
-				border-left: 1px solid black;
-				font-size: 3.2em; 
+		/* If Height Smaller than 667px */
+		@media only screen and (max-height: 667px) {
+			#download {
+				padding: 1.2em 1em 1em 1em;
 			}
 		}
 		
@@ -218,8 +197,8 @@
 			vertical-align: text-top;
 			background: white;
 		}
-		/* If Width Larger than 481px */
-		@media only screen and (min-width: 480px) {
+		/* If Width Larger than 480px */
+		@media only screen and (min-width: 481px) {
 			#tbxArabic {
 				/* display: inline-block; */
 				float: right;
@@ -245,7 +224,59 @@
 				font-size: 2.3em; 
 			}
 		}
+		/* If Height Smaller than 667px */
+		@media only screen and (max-height: 667px) {
+			#tbxArabic {
+				height: 180px;
+			}
+		}
 		
+		#tbxHebrew {
+			box-sizing: border-box;
+			position: relative;
+			overflow: auto;
+			width: 50%; 
+			margin: 0;
+			padding: 0.3em 0.5em 0.4em 0.4em;
+			word-break:break-all;
+			line-height: 0.95;
+			vertical-align: text-top;
+			text-align: right;
+			background: white;
+		}
+		/* If Width Larger than 480px */
+		@media only screen and (min-width: 481px) {
+			#tbxHebrew {
+				/* display: inline-block; */
+				float: left;
+				width: 50%;
+				height: 400px;
+				border-top: 1px solid black;
+				border-right: 1px solid black;
+				border-bottom: 1px solid black;
+				border-left: 1px solid black;
+				font-size: 4em; 
+			}
+		}
+		/* If Width Smaller than 480px */
+		@media only screen and (max-width: 480px) {
+			#tbxHebrew {
+				display: block;
+				width: 100%;
+				height: 200px;
+				border-top: 0;
+				border-right: 1px solid black;
+				border-bottom: 1px solid black;
+				border-left: 1px solid black;
+				font-size: 3em; 
+			}
+		}
+		/* If Height Smaller than 667px */
+		@media only screen and (max-height: 667px) {
+			#tbxHebrew {
+				height: 180px;
+			}
+		}
 	</style>
 </head>
 <body>
